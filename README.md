@@ -1,7 +1,5 @@
-# Crabchain
-
 ![Crabchain](assets/crabchain.jpg)
-Welcome to Crabchain, a CLI blockchain implementation written in Rust.
+Crabchain, a crustacean themed blockchain implementation written in Rust.
 
 ## Table of Contents
 
@@ -14,18 +12,15 @@ Welcome to Crabchain, a CLI blockchain implementation written in Rust.
 
 ## Introduction
 
-I built Crabchain as a way to familiarize myself with Rust. Crabchain doesn't have too many features, but it is pretty nimble and safe. It does allow for some of the most common blockchain operations such as mining, setting the difficulty level, and viewing the blockchain.
+I built Crabchain as a way to familiarize myself with Rust. Crabchain doesn't have too many features, but it is fairly nimble and safe. It does allow for some of the most common blockchain operations such as mining with proof of work and viewing the blockchain. It also allows you to set the difficulty level of the blockchain to control the mining process to tune it for your needs.
 
 ## Features
 
-- Mine new blocks
-  Mining blocks is the most common operation in blockchains. The block that is mined is added to the end of the chain, and the previous block's hash is used as the new block's previous hash. To mine a new block, use the `mine_block` command or by using the CLI.
-
-- Set difficulty levels
-  The difficulty level is the number of leading zeros in the hash of the block. The more leading zeros, the more difficult it is to mine a block. The default difficulty level is 5, which is tuned for most mid-range laptops. You can change the difficulty level using the `set_difficulty` command or by using the CLI.
-
-- View the blockchain
-  See the current state of the blockchain using the `view_blockchain` command or by using the CLI. Details included in the block are index, timestamp, data, previous hash, and hash.
+- **Mine new blocks**: Crabchain allows you to mine new blocks and add them to the blockchain using a proof-of-work algorithm.
+- **Set difficulty levels**: You can set the difficulty level of the blockchain to control the mining process.
+- **View the blockchain**: Crabchain provides a way to view the blockchain and its transactions.
+- **Basic blockchain data structure**: Crabchain uses a basic blockchain data structure to store blocks and transactions.
+- **Blockchain validation**: Crabchain can validate the integrity of the blockchain and ensure that it follows the rules of the blockchain protocol. (WIP)
 
 ## Installation
 
@@ -50,6 +45,7 @@ To use Crabchain, follow these steps:
 ## Planned Features
 
 - Add GUI
+- Add Validation
 
 ## Technologies Used
 
