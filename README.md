@@ -1,6 +1,6 @@
 # Crabchain
 
-![Crabchain](assets/crabchain.png)
+![Crabchain](assets/crabchain.jpg)
 Welcome to Crabchain, a CLI blockchain implementation written in Rust.
 
 ## Table of Contents
@@ -37,6 +37,7 @@ To install Crabchain, follow these steps:
 
 ## Usage
 
+![Demo](assets/demo.png)
 To use Crabchain, follow these steps:
 
 1. Run the executable: `target/release/crabchain`
@@ -59,3 +60,5 @@ To use Crabchain, follow these steps:
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+![cc](assets/logo.png)
