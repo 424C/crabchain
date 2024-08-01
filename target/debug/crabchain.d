@@ -1,0 +1,1 @@
+/Users/bren/Projects/Rust/blockchain/target/debug/crabchain: /Users/bren/Projects/Rust/blockchain/src/block.rs /Users/bren/Projects/Rust/blockchain/src/blockchain.rs /Users/bren/Projects/Rust/blockchain/src/main.rs
