@@ -1,16 +1,21 @@
 mod block;
 mod blockchain;
 
+use std::process;
 use std::io;
 use block::Block;
 use blockchain::Blockchain;
 
 fn display_menu() {
-    println!("Crabchain Menu:");
+    println!();
+    println!("**********************************");
+    println!("CRABCHAIN MENU:");
     println!("1. Mine block");
     println!("2. Set difficulty");
     println!("3. View blockchain");
-    println!("4. Exit");
+    println!("4. Validate blockchain");
+    println!("5. Exit");
+    println!("**********************************");
     println!("Enter your choice: ");
 }
 
@@ -27,6 +32,9 @@ fn display_blockchain(blockchain: &Blockchain) {
 }
 
 fn main() {
+    // adjust the default difficulty for your hardware.
+    // example: an apple silicon M1 (2020) takes on average about 600k - 700k hashes to hit a block which is a block time of around 7 seconds.
+    // better hardware will require you to increase the difficulty.
     let mut difficulty = 5;
     let mut blockchain = Blockchain::new(difficulty);
 
@@ -64,20 +72,18 @@ fn main() {
                 display_blockchain(&blockchain);
             }
             4 => {
+                println!("Validating blockchain...");
+                println!("Blockchain is {}", if blockchain.is_valid_chain() { "valid" } else { "invalid" });
+                if !blockchain.is_valid_chain() {
+                    println!("An error state has occurred.");
+                    process::exit(1);
+                }
+            }
+            5 => {
                 println!("Exiting...");
                 break;
             }
             _ => println!("Invalid choice. Please try again."),
         }
-
-    for block in &blockchain.chain {
-        println!("Index: {}", block.index);
-        println!("Timestamp: {}", block.timestamp);
-        println!("Data: {}", block.data);
-        println!("Previous Hash: {}", block.previous_hash);
-        println!("Hash: {}", block.hash);
-        println!("-------------------------");
-    }
-
     }
 }
